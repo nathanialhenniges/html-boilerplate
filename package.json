@@ -35,10 +35,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MrDemonWolf/jekyllb-boilerplate.git"
+    "url": "https://github.com/MrDemonWolf/html-boilerplate.git"
   },
   "keywords": [
-    "jekyll",
+    "html",
     "gulp",
     "sass",
     "browsersync",
@@ -47,8 +47,8 @@
     "Webpack"
   ],
   "bugs": {
-    "url": "https://github.com/MrDemonWolf/jekyllb-boilerplate/issues"
+    "url": "https://github.com/MrDemonWolf/html-boilerplate/issues"
   },
-  "homepage": "https://github.com/MrDemonWolf/jekyllb-boilerplate",
+  "homepage": "https://github.com/MrDemonWolf/html-boilerplate",
   "dependencies": {}
 }
