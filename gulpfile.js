@@ -139,8 +139,8 @@ gulp.task('_webpack', function () {
  * Reloading on change
  */
 gulp.task('bowsersync-reload'), function (){
-  gulp.watch("'!./' + config.paths.dest + '/**/*'", ['sass']);
-  gulp.watch("app/*.html").on('change', browserSync.reload);
+  gulp.watch("'!./' + config.paths.sass + '/**/*'", ['sass']);
+  gulp.watch("/*.html").on('change', browserSync.reload);
 };
 
 /**
