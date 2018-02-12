@@ -152,4 +152,4 @@ example: `["pluginA.js", "pluginB.js", "main.js"]`
 
 ## Copyright and License
 
-Copyright 2018 MrDemonWolf. Code released under the [MIT](https://github.com/mrdemonwolf/jekyllrb-boilerplate/blob/master/LICENSE) license.
+Copyright 2018 MrDemonWolf. Code released under the [MIT](https://github.com/mrdemonwolf/html-boilerplate/blob/master/LICENSE) license.
