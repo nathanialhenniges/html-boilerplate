@@ -7,7 +7,6 @@
 var argv = require('yargs').argv;
 var autoprefixer = require('autoprefixer');
 var browserync = require('browser-sync').create();
-var cp = require('child_process');
 var eslint = require('gulp-eslint');
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
@@ -61,7 +60,15 @@ for (var i = 0; i <= config.js.entry.length - 1; i++) {
 }
 
 /**
- *  launch the Server
+ * Rebuild site & do page reload
+ */
+gulp.task('site-rebuild', function () {
+  browserync.notify('Rebuilded site');
+  browserync.reload();
+});
+
+/**
+ * Wait for site-build, then launch the Server
  */
 gulp.task('server', function () {
   return browserync.init({
@@ -77,7 +84,9 @@ gulp.task('server', function () {
  */
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '/**/*')
-    .pipe(sass({ outputStyle: config.sass.outputStyle }).on('error', sass.logError))
+    .pipe(sass({
+      outputStyle: config.sass.outputStyle
+    }).on('error', sass.logError))
     .pipe(postcss([
       autoprefixer({
         browsers: config.autoprefixer.browsers
@@ -95,7 +104,9 @@ gulp.task('imagemin', function () {
     .pipe(newer(paths.images))
     .pipe(imagemin({
       progressive: true,
-      svgoPlugins: [{ removeViewBox: false }],
+      svgoPlugins: [{
+        removeViewBox: false
+      }],
       use: [pngquant()]
     }))
     .pipe(gulp.dest(paths.images));
@@ -135,16 +146,9 @@ gulp.task('_webpack', function () {
   gulp.start('webpack');
 });
 
-/**
- * Reloading on change
- */
-gulp.task('bowsersync-reload'), function (){
-  gulp.watch("'!./' + config.paths.sass + '/**/*'", ['sass']);
-  gulp.watch("/*.html").on('change', browserSync.reload);
-};
 
 /**
- * Default task, running just `gulp` will minify the images, compile the sass, js.
+ * Default task, running just `gulp` will minify the images, compile the sass, js, and site
  * launch BrowserSync, and watch files. Tasks can be configured by mrdemonwolf.config.js
  */
 gulp.task('default', tasks, function () {
@@ -164,12 +168,13 @@ gulp.task('default', tasks, function () {
     watch([
       '!./node_modules/**/*',
       '!./README.md',
+      '*/*.html',
       '*.html',
       paths.css + '/**/*',
       paths.js + '/**/*',
       paths.images + '/**/*'
     ], function () {
-      gulp.start('bowsersync-reload');
+      gulp.start('site-rebuild');
     });
   }
 });
@@ -177,4 +182,4 @@ gulp.task('default', tasks, function () {
 /**
  * Test
  */
-gulp.task('test', ['build']);
+gulp.task('test', ['site-rebuild']);
