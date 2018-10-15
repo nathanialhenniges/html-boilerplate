@@ -1,4 +1,4 @@
-﻿# MrDemonwolf HTML Boilerplate
+﻿# HTML Boilerplate
 
 __HTML starter project including full setup for gulp, Sass, Autoprefixer, Browserify, imagemin, Browsersync, PostCSS etc.__
 
