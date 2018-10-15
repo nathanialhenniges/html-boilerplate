@@ -10,7 +10,7 @@ To use this starter project, you'll need the following things installed on your 
 user the installer, Homebrew, etc.
 
 ### Local Installation
-Clone this repo, or download it into a directory of your voice.
+Clone this repo, or download it into a directory of your choice.
 ```sh
 $ git clone https://github.com/mrdemonwolf/html-boilerplate.git
 ```
