@@ -12,7 +12,7 @@ user the installer, Homebrew, etc.
 ### Local Installation
 Clone this repo, or download it into a directory of your choice.
 ```sh
-$ git clone https://github.com/mrdemonwolf/html-boilerplate.git
+$ git clone https://github.com/nathanhenniges/html-boilerplate.git
 ```
 Inside the directory, run `npm install`.
 ```sh
@@ -152,4 +152,4 @@ example: `["pluginA.js", "pluginB.js", "main.js"]`
 
 ## Copyright and License
 
-Copyright 2018 MrDemonWolf. Code released under the [MIT](https://github.com/mrdemonwolf/html-boilerplate/blob/master/LICENSE) license.
+Copyright 2018 MrDemonWolf. Code released under the [MIT](https://github.com/nathanhenniges/html-boilerplate/blob/master/LICENSE) license.
